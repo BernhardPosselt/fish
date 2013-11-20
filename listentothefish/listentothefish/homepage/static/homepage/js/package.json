@@ -1,0 +1,26 @@
+{
+  "name": "homepage",
+  "version": "0.0.0",
+  "description": "listentothefish homepage",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Raydiation/fish"
+  },
+  "author": "Bernhard Posselt",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/Raydiation/fish/issues"
+  },
+  "homepage": "https://github.com/Raydiation/fish",
+  "devDependencies": {
+    "bower": "~1.2.7",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
