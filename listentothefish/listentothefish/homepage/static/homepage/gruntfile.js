@@ -65,6 +65,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-wrap');
 
     // Default task(s).
-    grunt.registerTask('default', ['concat', 'wrap', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['jshint', 'concat', 'wrap', 'uglify', 'cssmin']);
 
 };
