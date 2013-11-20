@@ -42,15 +42,23 @@ module.exports = function(grunt) {
                     ]
                 }
             }
+        },
+        cssmin: {
+            app: {
+                files: {
+                    'build/app.min.css': ['css/style.css']
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-wrap');
 
     // Default task(s).
-    grunt.registerTask('default', ['concat', 'wrap', 'uglify']);
+    grunt.registerTask('default', ['concat', 'wrap', 'uglify', 'cssmin']);
 
 };
