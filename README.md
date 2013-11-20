@@ -25,7 +25,7 @@ To get started with JavaScript development change into the folder:
 and run:
 
 	sudo npm -g install grunt-cli
-	npm install --dev
+	npm install
 
 To build the JavaScript files run:
 
