@@ -3,15 +3,27 @@
 {% block html %}ng-app="ListenToTheFish" ng-csp{% endblock %}
 
 {% block head %}
-    {% if TEMPLATE_DEBUG %}
-        <script type="text/javascript" src="{{ STATIC_URL }}homepage/js/app/bower_components/jquery/jquery.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}homepage/js/app/bower_components/angular/angular.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}homepage/js/build/app.js"></script>
-    {% else %}
-        <script type="text/javascript" src="{{ STATIC_URL }}homepage/js/app/bower_components/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}homepage/js/app/bower_components/angular/angular.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}homepage/js/build/app.min.js"></script>
-    {% endif %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}homepage/css/style.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}homepage/css/style.css">
+    <link rel="shortcut icon" href="{{ STATIC_URL }}homepage/img/favicon.png">
+{% endblock %}
 
+{% block scripts %}
+    <script src="{{ STATIC_URL }}homepage/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    {% if TEMPLATE_DEBUG %}
+        <script src="{{ STATIC_URL }}homepage/vendor/angular/angular.js"></script>
+        <script src="{{ STATIC_URL }}homepage/build/app.js"></script>
+    {% else %}
+        <script src="{{ STATIC_URL }}homepage/vendor/angular/angular.min.js"></script>
+        <script src="{{ STATIC_URL }}homepage/build/app.min.js"></script>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% include 'homepage/navigation.html' %}
+    <div id="main" class="container">
+        {% block content %}{% endblock %}
+    </div>
 {% endblock %}

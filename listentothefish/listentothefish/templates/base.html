@@ -2,12 +2,16 @@
 <html {% block html %}{% endblock %}>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset/normalize.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="author" content="Bernhard Posselt">
     {% block head %}{% endblock %}
 </head>
 <body>
-    <div id="main">
-        {% block content %}{% endblock %}
-    </div>
+    {% block body %}{% endblock %}
+    {% block scripts %}{% endblock %}
 </body>
 </html>
