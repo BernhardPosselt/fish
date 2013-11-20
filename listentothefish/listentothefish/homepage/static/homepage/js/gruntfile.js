@@ -30,14 +30,27 @@ module.exports = function(grunt) {
                 files: ['src/**/*.js'],
                 tasks: ['default']
             }
+        },
+        wrap: {
+            app: {
+                src: ['build/app.js'],
+                dest: '',
+                options: {
+                    wrapper: [
+                        '(function(window, $, angular, undefined) {', 
+                        '})(window, jQuery, angular);'
+                    ]
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-wrap');
 
     // Default task(s).
-    grunt.registerTask('default', ['concat', 'uglify']);
+    grunt.registerTask('default', ['concat', 'wrap', 'uglify']);
 
 };

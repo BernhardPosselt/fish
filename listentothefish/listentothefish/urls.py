@@ -5,6 +5,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('homepage.urls', namespace='homepage', 
+    url(r'^$', include('listentothefish.homepage.urls', namespace='homepage', 
         app_name='homepage')),    
 )

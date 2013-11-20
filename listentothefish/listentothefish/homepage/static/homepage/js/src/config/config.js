@@ -1,4 +1,4 @@
-app.config(function($interpolateProvider) {
+app.config(['$interpolateProvider', function($interpolateProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
-});
+}]);

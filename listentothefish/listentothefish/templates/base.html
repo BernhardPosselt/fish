@@ -2,7 +2,8 @@
 <html {% block html %}{% endblock %}>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    {% block scripts %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset/normalize.css">
+    {% block head %}{% endblock %}
 </head>
 <body>
     <div id="main">
