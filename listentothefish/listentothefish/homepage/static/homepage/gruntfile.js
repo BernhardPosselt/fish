@@ -49,6 +49,11 @@ module.exports = function(grunt) {
                     'build/app.min.css': ['css/style.css']
                 }
             }
+        },
+        jshint: {
+            files: {
+                src: ['src/**/*.js']
+            }
         }
     });
 
@@ -56,6 +61,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-wrap');
 
     // Default task(s).
