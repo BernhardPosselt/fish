@@ -4,7 +4,5 @@ html, body {
 }
 
 #main {
-    width: 100%;
-    min-height: 100%;
-    background-color: green;
+	padding-top: 60px;
 }
