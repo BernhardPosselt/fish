@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block html %}ng-app="ListenToTheFish" ng-csp{% endblock %}
+{% block html %}ng-app="ListenToTheFish" ng-csp ng-cloak{% endblock %}
 
 {% block head %}
     <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/css/bootstrap.min.css">
