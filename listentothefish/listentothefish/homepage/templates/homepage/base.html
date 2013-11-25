@@ -3,15 +3,12 @@
 {% block html %}ng-app="ListenToTheFish" ng-csp ng-cloak{% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}homepage/build/app.min.css">
     <link rel="shortcut icon" href="{{ STATIC_URL }}homepage/img/favicon.png">
 {% endblock %}
 
 {% block scripts %}
     <script src="{{ STATIC_URL }}homepage/vendor/jquery/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}homepage/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     {% if TEMPLATE_DEBUG %}
         <script src="{{ STATIC_URL }}homepage/vendor/angular/angular.js"></script>
         <script src="{{ STATIC_URL }}homepage/build/app.js"></script>
@@ -22,8 +19,16 @@
 {% endblock %}
 
 {% block body %}
-    {% include 'homepage/navigation.html' %}
-    <div id="main" class="container">
-        {% block content %}{% endblock %}
+    <div id="main">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+          </ul>
+        </nav>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
     </div>
 {% endblock %}
