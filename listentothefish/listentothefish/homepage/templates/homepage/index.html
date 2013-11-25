@@ -4,10 +4,26 @@
 
 {% block content %}
 
-<form role="form">
-	<input type="text" ng-model="test" placeholder="type to interact">
-</form>
-
-[[test]]
-
+<div ng-controller="EventController" class="events">
+    <article ng-repeat="event in events|orderBy:'date':true">
+        <time class="date" datetime="[[ event.date | date:'shortDate' ]]">[[ event.date| date:'yyyy-MM-dd' | date:'mediumDate']]</time>
+        <header>
+            <h1>[[ event.title ]]</h1>
+            <img ng-src="[[ staticUrl ]]/homepage/img/[[ event.id ]].jpg">
+        </header>
+        <table>
+            <tr>
+                <th>Ort:</th>
+                <td>[[ event.place ]]</td>
+            </tr>
+            <tr>
+                <th>Zeit:</th>
+                <td>[[ event.date | date:'shortTime' ]]</td>
+            </tr>
+        </table>
+        <p>[[ event.description ]]</p>
+        <button ng-click="event.showMore=!event.showMore">Mehr</button>
+        <p class="animate-show-hide" ng-show="event.showMore">[[ event.longDescription ]]</p>
+    </article>
+</div>
 {% endblock %}

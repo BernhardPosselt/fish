@@ -1,9 +1,3 @@
-(function(window, $, angular, undefined) {
-var app = angular.module('ListenToTheFish', ['ngAnimate']);
-app.config(['$interpolateProvider', function($interpolateProvider) {
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
-}]);
 app.controller('EventController', ['$scope', function ($scope) {
     $scope.events = [
         {
@@ -25,4 +19,3 @@ app.controller('EventController', ['$scope', function ($scope) {
     ];
 
 }]);
-})(window, jQuery, angular);

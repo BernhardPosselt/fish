@@ -32,5 +32,52 @@ nav:after {
     clear: both;
 }
 
+/**
+ * content
+ */
 #content {
+}
+
+/**
+ * Events
+ */
+.events {
+
+}
+
+.events .date {
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    line-height: 30px;
+    width: 100%;
+    display: block;
+    padding: 0 10px;
+    background-color: yellow;
+}
+
+.animate-show {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  line-height:20px;
+  opacity:1;
+  padding:10px;
+  border:1px solid black;
+  background:white;
+}
+ 
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+  display:block!important;
+}
+ 
+.animate-show.ng-hide {
+  line-height:0;
+  opacity:0;
+  padding:0 10px;
+}
+ 
+.check-element {
+  padding:10px;
+  border:1px solid black;
+  background:white;
 }
