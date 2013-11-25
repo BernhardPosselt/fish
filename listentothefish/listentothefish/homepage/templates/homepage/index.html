@@ -23,7 +23,7 @@
         </table>
         <p>[[ event.description ]]</p>
         <button ng-click="event.showMore=!event.showMore">Mehr</button>
-        <p class="animate-show-hide" ng-show="event.showMore">[[ event.longDescription ]]</p>
+        <p ng-animate ng-show="event.showMore">[[ event.longDescription ]]</p>
     </article>
 </div>
 {% endblock %}
