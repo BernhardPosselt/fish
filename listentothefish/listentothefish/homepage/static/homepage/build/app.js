@@ -1,5 +1,6 @@
 (function(window, $, angular, undefined) {
 var app = angular.module('ListenToTheFish', ['ngAnimate']);
+
 app.config(['$interpolateProvider', function($interpolateProvider) {
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
