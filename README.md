@@ -1,11 +1,8 @@
 Listen to the fish homepage
 ===========================
-hi
 
 Dependencies
 ------------
-
-* Django 1.6
 * Python 3.2
 
 Installation
@@ -13,18 +10,17 @@ Installation
 
 Development Dependencies
 ------------------------
-
 * NodeJS 0.10
-* Grunt 0.4
+
 
 Development
 -----------
-To get started with JavaScript development change into the folder:
+* Install [Live Reload for Chromium](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
-	listentothefish/listentothefish/homepage/static/homepage
+* To install the dependencies run:
 
-and run:
-
+	sudo pip install -r requirements.txt
+	cd listentothefish/listentothefish/homepage/static/homepage
 	sudo npm -g install grunt-cli
 	npm install
 
@@ -43,3 +39,5 @@ To run the development server change into the folder:
 and run:
 
 	python3 manage.py runserver
+
+to enable livereload hit the livereload button in the browser
