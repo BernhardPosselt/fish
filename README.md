@@ -15,9 +15,9 @@ Development Dependencies
 
 Development
 -----------
-* Install [Live Reload for Chromium](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+Install [Live Reload for Chromium](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
-* To install the dependencies run:
+To install the dependencies run:
 
 	sudo pip install -r requirements.txt
 	cd listentothefish/listentothefish/homepage/static/homepage
