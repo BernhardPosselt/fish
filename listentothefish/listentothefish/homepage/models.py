@@ -2,7 +2,6 @@ from django.db import models
 from django.utils.translation import ugettext as _
 
 
-# Create your models here.
 class Event(models.Model):
     date = models.DateTimeField(_('Datum'))
     title = models.CharField(_('Titel'), max_length=250)

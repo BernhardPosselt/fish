@@ -5,5 +5,5 @@ from listentothefish.homepage.views import EventAPI
 
 urlpatterns = patterns('',
 	url(r'^$', TemplateView.as_view(template_name='homepage/index.html')),
-	url(r'^events/$', EventAPI.as_view())
+	url(r'^api/1.0/events/$', EventAPI.as_view())
 )

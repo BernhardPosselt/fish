@@ -4,6 +4,7 @@ from rest_framework import serializers
 
 from listentothefish.homepage.models import Event
 
+
 class EventSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Event

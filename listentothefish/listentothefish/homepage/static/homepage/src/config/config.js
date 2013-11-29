@@ -6,7 +6,7 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
     $interpolateProvider.endSymbol(']]');
 
     var baseUrl = '/';
-    var apiUrl = baseUrl;
+    var apiUrl = baseUrl + 'api/1.0/';
     var partialUrl = baseUrl + 'static/homepage/partials/';
 
     $routeProvider.when('/', {
