@@ -4,14 +4,7 @@ Listen to the fish homepage
 Dependencies
 ------------
 * Python 3.2
-
-Installation
-------------
-
-Development Dependencies
-------------------------
-* NodeJS 0.10
-
+* NodeJS 0.10 (development only)
 
 Development
 -----------
