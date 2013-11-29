@@ -14,7 +14,7 @@ To install the dependencies run:
 
 	sudo pip install -r requirements.txt
 	cd listentothefish/listentothefish/homepage/static/homepage
-	sudo npm -g install grunt-cli
+	sudo npm -g install grunt-cli bower
 	npm install
 
 To build the JavaScript files run:
