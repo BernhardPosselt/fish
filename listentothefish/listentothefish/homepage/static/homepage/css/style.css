@@ -59,6 +59,7 @@ nav:after {
     animation: swim 1s infinite ease-in-out;
     -webkit-animation: swim 1s infinite ease-in-out;
     -moz-animation: swim 1s infinite ease-in-out;
+    -ms-animation: swim 1s infinite ease-in-out;
 }
 
 /**

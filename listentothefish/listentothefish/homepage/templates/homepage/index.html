@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="ListenToTheFish" ng-csp ng-cloak>
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>Listen to the Fish</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="description" content="{% block description %}{% endblock %}">
-    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <meta name="author" content="Bernhard Posselt">
     <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/angular/angular-csp.css">
     {% if TEMPLATE_DEBUG %}
@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}homepage/build/app.min.css">
     {% endif %}
     <link rel="shortcut icon" href="{{ STATIC_URL }}homepage/img/favicon.png">
-    {% block head %}{% endblock %}
 </head>
 <body>
     <div id="main">
@@ -54,6 +53,5 @@
         <script src="{{ STATIC_URL }}homepage/build/app.min.js"></script>
     {% endif %}
 
-    {% block scripts %}{% endblock %}
 </body>
 </html>
