@@ -85,3 +85,10 @@ nav:after {
     background-color: yellow;
 }
 
+.browsehappy {
+    margin: 0 0 .2em 0;
+    background: #F7FC9B;
+    border-bottom: 1px solid #888;
+    color: #000;
+    padding: .2em .4em;
+}
