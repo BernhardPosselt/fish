@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ListenToTheFish" ng-csp ng-cloak ng-init="staticUrl = '{{ STATIC_URL }}'">
+<html ng-app="ListenToTheFish" ng-csp ng-cloak>
 <head>
     <title>{% block title %}{% endblock %}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/angular/angular-csp.css">
     {% if TEMPLATE_DEBUG %}
         <link rel="stylesheet" href="{{ STATIC_URL }}homepage/css/style.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}homepage/css/animation.css">
         <link rel="stylesheet" href="{{ STATIC_URL }}homepage/vendor/normalize-css/normalize.css">
     {% else %}
         <link rel="stylesheet" href="{{ STATIC_URL }}homepage/build/app.min.css">
@@ -22,13 +23,21 @@
     <div id="main">
         <nav>
           <ul>
-            <li><a href="#">Allgemein</a></li>
-            <li><a href="#">Archiv</a></li>
-            <li><a href="#">Home</a></li>
+            <li ng-show="isRouteLoading" 
+                ng-class="{active: $route.current.activeTab == 'events'}">
+                <a href="#/" class="loading nav-fish" >Listen to the Fish</a>
+            </li>
+            <li ng-hide="isRouteLoading"
+                ng-class="{active: $route.current.activeTab == 'events'}">
+                <a href="#/" class="nav-fish" >Listen to the Fish</a>
+            </li>
+            <li ng-class="{active: $route.current.activeTab == 'about'}">
+                <a href="#/about">Über</a>
+            </li>
           </ul>
         </nav>
         <div id="content">
-            {% block content %}{% endblock %}
+            <div ng-view></div>
         </div>
     </div>
 
@@ -36,10 +45,12 @@
     {% if TEMPLATE_DEBUG %}
         <script src="{{ STATIC_URL }}homepage/vendor/angular/angular.js"></script>
         <script src="{{ STATIC_URL }}homepage/vendor/angular-animate/angular-animate.js"></script>
+        <script src="{{ STATIC_URL }}homepage/vendor/angular-route/angular-route.js"></script>
         <script src="{{ STATIC_URL }}homepage/build/app.js"></script>
     {% else %}
         <script src="{{ STATIC_URL }}homepage/vendor/angular/angular.min.js"></script>
         <script src="{{ STATIC_URL }}homepage/vendor/angular-animate/angular-animate.min.js"></script>
+        <script src="{{ STATIC_URL }}homepage/vendor/angular-route/angular-route.min.js"></script>
         <script src="{{ STATIC_URL }}homepage/build/app.min.js"></script>
     {% endif %}
 

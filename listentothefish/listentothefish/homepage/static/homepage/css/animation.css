@@ -1,0 +1,35 @@
+@-webkit-keyframes swim {
+    0% {
+        background-position: 10px -5px
+    }
+    50% {
+        background-position: 10px 5px;
+    }
+    100% {
+        background-position: 10px -5px
+    }
+}
+
+@-moz-keyframes swim {
+    0% {
+        background-position: 10px -5px
+    }
+    50% {
+        background-position: 10px 5px;
+    }
+    100% {
+        background-position: 10px -5px
+    }
+}
+
+@keyframes swim {
+    0% {
+        background-position: 10px -5px
+    }
+    50% {
+        background-position: 10px 5px;
+    }
+    100% {
+        background-position: 10px -5px
+    }
+}

@@ -1,15 +1,9 @@
-{% extends 'homepage/base.html' %}
-
-{% block title %}Listen To The Fish{% endblock %}
-
-{% block content %}
-
-<div ng-controller="EventController" class="events">
+<div class="events">
     <article ng-repeat="event in events">
         <time class="date" datetime="[[ event.date | date:'shortDate' ]]">[[ event.date| date:'yyyy-MM-dd' | date:'mediumDate']]</time>
         <header>
             <h1>[[ event.title ]]</h1>
-            <img ng-src="[[ mediaUrl ]][[ event.image ]]">
+            <img ng-src="[[ event.image ]]">
         </header>
         <table>
             <tr>
@@ -26,4 +20,3 @@
         <p ng-animate ng-show="event.showMore">[[ event.description ]]</p>
     </article>
 </div>
-{% endblock %}

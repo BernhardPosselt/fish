@@ -22,14 +22,43 @@ nav {
         padding: 0;
     }
 
-        nav ul li {
+        nav li {
             display: block;
             float: left;
-            line-height: 45px;
         }
+
+            nav a {
+                line-height: 32px;
+                float: left;
+                text-decoration: none;
+                padding: 0 20px;
+                background-color: #aaa;
+                color: #fff;
+            }
+
+            nav a:hover {
+                background-color: #ccc;
+            }
+
+            nav .active a {
+                background-color: #ccc;
+            }
 
 nav:after {
     clear: both;
+}
+
+.nav-fish {
+    background-image: url('../img/nav-fish.png');
+    background-repeat: no-repeat;
+    padding-left: 58px;
+    background-position: 10px center;
+}
+
+.loading.nav-fish {
+    animation: swim 1s infinite ease-in-out;
+    -webkit-animation: swim 1s infinite ease-in-out;
+    -moz-animation: swim 1s infinite ease-in-out;
 }
 
 /**
@@ -55,29 +84,3 @@ nav:after {
     background-color: yellow;
 }
 
-.animate-show {
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.5s;
-  line-height:20px;
-  opacity:1;
-  padding:10px;
-  border:1px solid black;
-  background:white;
-}
- 
-.animate-show.ng-hide-add,
-.animate-show.ng-hide-remove {
-  display:block!important;
-}
- 
-.animate-show.ng-hide {
-  line-height:0;
-  opacity:0;
-  padding:0 10px;
-}
- 
-.check-element {
-  padding:10px;
-  border:1px solid black;
-  background:white;
-}

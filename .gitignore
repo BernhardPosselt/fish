@@ -5,4 +5,4 @@ local_settings.py
 node_modules
 __pycache__
 *.sqlite3
-
+upload
