@@ -8,7 +8,7 @@ class Event(models.Model):
     place = models.CharField(_('Ort'), max_length=250)
     description = models.TextField(_('Beschreibung'))
     last_modified = models.DateTimeField(_('Letzte Bearbeitung'), auto_now=True)
-    image = models.ImageField(_('Bild'), upload_to='events')
+    image = models.ImageField(_('Bild'), upload_to='events', blank=True)
 
     def __str__(self):
         return self.title

@@ -1,6 +1,15 @@
+@font-face {
+    font-family: 'Autonym';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../font/Autonym.ttf');
+}
+
 html, body {
     width: 100%;
     height: 100%;
+    background-color: #fefefe;
+    font-family: 'Autonym'
 }
 
 #main {
@@ -11,56 +20,84 @@ html, body {
     border-right: 1px solid #aaa;
 }
 
+.header {
+    height: 140px;    
+}
+
+.header .logo {
+    padding: 25px 0 0 10px;
+}
+
+input {
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+input:focus {
+    border: 1px solid #333;
+}
+
+#sub-nav {
+    float: right;
+    height: 130px;
+    display: table;
+
+}
+
+.search {
+    padding: 35px 15px 0 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+    .search input {
+        padding: 4px;
+        background-image: url('../img/magnifier.svg');
+        background-repeat: no-repeat;
+        background-position: 160px center;
+        width: 180px;
+        background-size: 24px;
+    }
+
 nav {
     width: 100%;
-    height: 45px;
+    height: 32px;
+    border-top: 1px dashed #ccc;
+    border-bottom: 3px solid #ccc;
+    padding: 0;
+    margin: 0;
 }
 
     nav ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        width: 100%;
     }
 
         nav li {
-            display: block;
             float: left;
         }
 
             nav a {
                 line-height: 32px;
-                float: left;
+                display: block;
                 text-decoration: none;
                 padding: 0 20px;
-                background-color: #aaa;
-                color: #fff;
+                background-color: #fefefe;
+                color: #000;
             }
 
             nav a:hover {
-                background-color: #ccc;
+                background-color: #d5bdbd;
             }
 
             nav .active a {
-                background-color: #ccc;
+                background-color: #d5bdbd;
             }
 
-nav:after {
-    clear: both;
-}
 
-.nav-fish {
-    background-image: url('../img/nav-fish.png');
-    background-repeat: no-repeat;
-    padding-left: 58px;
-    background-position: 10px center;
-}
 
-.loading.nav-fish {
-    animation: swim 1s infinite ease-in-out;
-    -webkit-animation: swim 1s infinite ease-in-out;
-    -moz-animation: swim 1s infinite ease-in-out;
-    -ms-animation: swim 1s infinite ease-in-out;
-}
 
 /**
  * content
@@ -72,17 +109,47 @@ nav:after {
  * Events
  */
 .events {
+    padding: 20px;
+}
 
+.events .articles {
+    border-bottom: 1px solid #000;
+    width: 320px;
+    float: left;
+}
+
+.events article {
+    cursor: pointer;
+}
+
+.events .detail {
+    width: 600px;
+    float: left;
+    height: 300px
 }
 
 .events .date {
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
-    line-height: 30px;
-    width: 100%;
-    display: block;
-    padding: 0 10px;
-    background-color: yellow;
+    font-size: 14pt;
+    text-transform:uppercase;
+}
+
+.events .placetime {
+    padding-top: 20px;
+    font-style: italic;
+}
+
+.events .placetime p {
+    padding: 0;
+    margin: 0;
+}
+
+.events .title {
+    font-size: 14pt;
+    font-weight: normal;
+    text-transform:uppercase;
+    margin: 0;
+    background-color: #d5bdbd;
+    display: inline;
 }
 
 .browsehappy {

@@ -1,22 +1,31 @@
 <div class="events">
-    <article ng-repeat="event in events">
-        <time class="date" datetime="[[ event.date | date:'shortDate' ]]">[[ event.date| date:'yyyy-MM-dd' | date:'mediumDate']]</time>
-        <header>
-            <h1>[[ event.title ]]</h1>
-            <img ng-src="[[ event.image ]]">
-        </header>
-        <table>
-            <tr>
-                <th>Ort:</th>
-                <td>[[ event.place ]]</td>
-            </tr>
-            <tr>
-                <th>Zeit:</th>
-                <td>[[ event.date | date:'shortTime' ]]</td>
-            </tr>
-        </table>
-        <p>[[ event.description ]]</p>
-        <button ng-click="event.showMore=!event.showMore">Mehr</button>
-        <p ng-animate ng-show="event.showMore">[[ event.description ]]</p>
-    </article>
+
+    <div class="articles">
+        <article ng-repeat="event in events" ng-click="setActiveEvent(event)">
+            
+            <header>
+                <div>
+                    <time class="date" datetime="[[ event.date | date:'shortDate' ]]">  [[ event.date| date:'EEE dd.MM.yy' | date:'mediumDate']]
+                    </time>    
+                </div>
+                <div>
+                    <h1 class="title">[[ event.title ]]</h1>
+                </div>
+                <!--<img ng-src="[[ event.image ]]">-->
+            </header>
+
+            <div class="placetime">
+                <p>[[ event.place ]]</p>
+                <p>[[ event.date | date:'shortTime' ]]</p>
+            </div>
+
+            <p>[[ event.description ]]</p>
+            <!--<button ng-click="event.showMore=!event.showMore">Mehr</button>
+            <p ng-animate ng-show="event.showMore">[[ event.description ]]</p>-->
+        </article>
+    </div>
+
+    <div class="detail">
+        [[ activeEvent.place ]]
+    </div>
 </div>
