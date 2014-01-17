@@ -20,9 +20,6 @@ html, body {
     border-right: 1px solid #aaa;
 }
 
-.header {
-    height: 140px;    
-}
 
 .header .logo {
     padding: 25px 0 0 10px;
@@ -103,6 +100,12 @@ nav {
  * content
  */
 #content {
+}
+
+
+.content-header {
+    background-image: url('../img/header.jpg');
+    height: 180px;
 }
 
 /**

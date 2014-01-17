@@ -34,7 +34,7 @@
             </div>
 
             <div class="logo">
-                <a href="{% url 'homepage:index' %}"><img src="{{ STATIC_URL }}homepage/img/logo.jpg" alt="logo"></a>
+                <a href="{% url 'homepage:index' %}"><img src="{{ STATIC_URL }}homepage/img/logo.png" alt="logo"></a>
             </div>
 
         </header>
@@ -67,6 +67,7 @@
           </ul>
         </nav>
         <div id="content">
+            <header class="content-header"></header>
             <div ng-view></div>
         </div>
     </div>
