@@ -26,6 +26,7 @@
 
     <div id="main">
 
+    <!--
         <header class="header">
             <div id="sub-nav">
                 <div class="search">
@@ -38,37 +39,26 @@
             </div>
 
         </header>
+    -->
 
         <nav>
           <ul>
-            <li ng-show="isRouteLoading" 
-                ng-class="{active: $route.current.activeTab == 'events'}">
-                <a href="#/" class="loading nav-fish" >Vorträge</a>
-            </li>
-            <li ng-hide="isRouteLoading"
-                ng-class="{active: $route.current.activeTab == 'events'}">
-                <a href="#/" class="nav-fish" >Events</a>
-            </li>
-            <li ng-class="{active: $route.current.activeTab == 'about'}">
-                <a href="#/about">Gesprächsrunden</a>
-            </li>
-            <li ng-class="{active: $route.current.activeTab == 'about'}">
-                <a href="#/about">Anbetung</a>
-            </li>
-            <li ng-class="{active: $route.current.activeTab == 'about'}">
-                <a href="#/about">Seminare</a>
-            </li>
-            <li ng-class="{active: $route.current.activeTab == 'about'}">
-                <a href="#/about">Ausstellungen</a>
-            </li>
-            <li ng-class="{active: $route.current.activeTab == 'about'}">
-                <a href="#/about">Beiträge</a>
+            <li ng-class="{active: $route.current.activeTab == 'contacts'}">
+                <a href="#/" class="nav-fish" >Kontakt</a>
+            </li> | 
+            <li ng-class="{active: $route.current.activeTab == 'events'}">
+                <a href="#/" class="loading nav-fish" >Events</a>
             </li>
           </ul>
         </nav>
         <div id="content">
-            <header class="content-header"></header>
-            <div ng-view></div>
+            <header id="content-header">
+                <div class="filter">
+                    <input type="text" />
+                </div>
+            </header>
+            </header>
+            <div ng-view id="content-detail"></div>
         </div>
     </div>
 
