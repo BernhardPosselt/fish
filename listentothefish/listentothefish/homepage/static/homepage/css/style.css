@@ -116,10 +116,11 @@ nav {
 
 /* left */
 .articles {
-    width: 340px;
+    width: 338px;
     float: left;
     padding: 10px;
     background-color: #fefefe;
+    border: 1px solid #ccc;
 }
 
 .articles a {
@@ -144,7 +145,7 @@ nav {
     background-color: #fefefe;
     border-right: 0;
     border-bottom: 1px solid #ccc;
-    width: 349px;
+    width: 359px;
 }
 
 .articles .active + a {
@@ -194,10 +195,11 @@ nav {
 
 /* right */
 .detail {
-    width: 580px;
+    width: 568px;
     padding: 10px;
     float: right;
     background-color: #fefefe;
+    border: 1px solid #ccc;
 }
 
 .browsehappy {
