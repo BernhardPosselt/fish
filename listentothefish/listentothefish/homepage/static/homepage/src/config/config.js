@@ -22,6 +22,15 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
                     deferred.reject();
                 });
                 return deferred.promise;
+            }],
+            eventTypes: ['$http', '$q', function($http, $q) {
+                var deferred = $q.defer();
+                $http.get(apiUrl + 'events/types?format=json').success(function(data) {
+                    deferred.resolve(data);
+                }).error(function() {
+                    deferred.reject();
+                });
+                return deferred.promise;
             }]
         }
     }).when('/events/:id', {
@@ -32,6 +41,15 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
             events: ['$http', '$q', function($http, $q) {
                 var deferred = $q.defer();
                 $http.get(apiUrl + 'events/?format=json').success(function(data) {
+                    deferred.resolve(data);
+                }).error(function() {
+                    deferred.reject();
+                });
+                return deferred.promise;
+            }],
+            eventTypes: ['$http', '$q', function($http, $q) {
+                var deferred = $q.defer();
+                $http.get(apiUrl + 'events/types?format=json').success(function(data) {
                     deferred.resolve(data);
                 }).error(function() {
                     deferred.reject();

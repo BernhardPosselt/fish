@@ -56,21 +56,6 @@ input:focus {
 }
 
 
-.search {
-    padding: 35px 15px 0 0;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-    .search input {
-        padding: 4px;
-        background-image: url('../img/magnifier.svg');
-        background-repeat: no-repeat;
-        background-position: 160px center;
-        width: 180px;
-        background-size: 24px;
-    }
-
 nav {
     width: 100%;
     padding: 70px 0 50px 0;
@@ -113,8 +98,6 @@ nav {
 /**
  * content
  */
-#content {
-}
 
 .filter {
     padding-bottom: 10px;
@@ -124,70 +107,98 @@ nav {
     width: 100%;
 }
 
-#content-detail {
-    background-color: #fefefe;
-    float: left;
-}
 
 
 /**
  * Events
  */
-.events {
+
+
+/* left */
+.articles {
+    width: 338px;
+    float: left;
     padding: 10px;
+    background-color: #fefefe;
+    border: 1px solid #ccc;
 }
 
-.events a {
+.articles a {
+    background-color: #e7e7e7;
     color: #000;
     text-decoration: none;
     display: block;
-}
-
-.events .articles {
-    width: 340px;
-    float: left;
-}
-
-.events .articles a {
-    background-color: #e7e7e7;
-}
-
-
-.events .active {
-    background-color: #fefefe;
     border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.articles article {
+    padding: 5px;
+}
+
+.articles a:last-child {
     border-bottom: 1px solid #ccc;
 }
 
-.events .detail {
-    width: 580px;
-    float: left;
-    height: 280px;
-    padding: 10px;
+.articles .active {
+    background-color: #fefefe;
+    border-right: 0;
+    border-bottom: 1px solid #ccc;
+    width: 349px;
 }
 
-.events .date {
+.articles .active + a {
+    border-top: 0;
+}
+
+.articles .date time {
     font-size: 14pt;
     text-transform:uppercase;
 }
 
-.events .placetime {
+.articles .date .day {
+    font-weight: bold;
+}
+
+
+.articles .event-type {
+    color: #fefefe;
+    float: right;
+    padding: 5px;
+}
+
+.articles .placetime {
     padding-top: 20px;
     font-style: italic;
 }
 
-.events .placetime p {
+.articles .placetime p {
     padding: 0;
     margin: 0;
 }
 
-.events .title {
+.articles .title h1:before {
+    content: 'Thema: ';
+}
+
+.articles .title {
+    margin-top: 30px;
+}
+
+.articles .title h1 {
     font-size: 14pt;
     font-weight: normal;
-    text-transform:uppercase;
     margin: 0;
-    background-color: #d5bdbd;
     display: inline;
+}
+
+/* right */
+.detail {
+    width: 580px;
+    padding: 10px;
+    float: right;
+    background-color: #fefefe;
 }
 
 .browsehappy {
