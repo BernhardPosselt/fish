@@ -1,9 +1,12 @@
 <div class="events">
 
     <div class="articles">
+        <div class="filter">
+            <input type="text" placeholder="Suche"/>
+        </div>
 
         <a ng-repeat="event in events" ng-href="#/events/[[ event.id ]]">
-            <article>
+            <article ng-class="{active: event.id == activeEvent.id}">
                 <header>
                     <div>
                         <time class="date" datetime="[[ event.date | date:'shortDate' ]]">  [[ event.date| date:'EEE dd.MM.yy' | date:'mediumDate']]
@@ -21,8 +24,6 @@
                 </div>
 
                 <p>[[ event.description ]]</p>
-                <!--<button ng-click="event.showMore=!event.showMore">Mehr</button>
-                <p ng-animate ng-show="event.showMore">[[ event.description ]]</p>-->
             </article>
         </a>
     </div>

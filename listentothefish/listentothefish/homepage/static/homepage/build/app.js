@@ -76,8 +76,12 @@ var eventController = app.controller('EventController',
 
     $scope.events = events;
 
-    var id = $routeParams.id || 0;
-    $scope.activeEvent = events[id];
+    var id = parseInt($routeParams.id, 10) || 0;
+    angular.forEach(events, function (event) {
+        if(id === event.id) {
+            $scope.activeEvent = event;
+        }
+    });
     
 }]);
 })(window, jQuery, angular);

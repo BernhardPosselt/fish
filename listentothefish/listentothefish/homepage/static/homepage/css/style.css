@@ -1,8 +1,24 @@
 @font-face {
-    font-family: 'Autonym';
+    font-family: 'NotoSans';
     font-weight: normal;
     font-style: normal;
-    src: url('../font/Autonym.ttf');
+    src: url('../font/noto-sans-hinted/NotoSans-Regular.ttf');
+    background-position: fixed;
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    font-weight: bold;
+    font-style: normal;
+    src: url('../font/noto-sans-hinted/NotoSans-Bold.ttf');
+    background-position: fixed;
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../font/noto-sans-hinted/NotoSans-Italic.ttf');
     background-position: fixed;
 }
 
@@ -10,7 +26,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #fefefe;
-    font-family: 'Autonym';
+    font-family: 'NotoSans';
     background: url('../img/bg.jpg');
 }
 
@@ -31,6 +47,8 @@ html, body {
 input {
     border: 1px solid #ccc;
     padding: 5px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 input:focus {
@@ -98,17 +116,11 @@ nav {
 #content {
 }
 
-#content-header {
-    height: 20px;
-    background-color: #fefefe;
-    padding: 10px;
+.filter {
+    padding-bottom: 10px;
 }
 
-#content-header .filter {
-    width: 320px;
-}
-
-#content-header .filter input {
+.filter input {
     width: 100%;
 }
 
@@ -128,6 +140,7 @@ nav {
 .events a {
     color: #000;
     text-decoration: none;
+    display: block;
 }
 
 .events .articles {
@@ -135,13 +148,10 @@ nav {
     float: left;
 }
 
-.events .articles a:nth-child(odd) {
+.events .articles a {
     background-color: #e7e7e7;
 }
 
-.events article {
-    cursor: pointer;
-}
 
 .events .active {
     background-color: #fefefe;
