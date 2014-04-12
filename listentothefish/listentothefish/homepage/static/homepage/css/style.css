@@ -116,11 +116,10 @@ nav {
 
 /* left */
 .articles {
-    width: 338px;
+    width: 340px;
     float: left;
     padding: 10px;
     background-color: #fefefe;
-    border: 1px solid #ccc;
 }
 
 .articles a {
