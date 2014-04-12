@@ -43,11 +43,11 @@
 
         <nav>
           <ul>
+            <li ng-class="{active: $route.current.activeTab == 'events'}">
+                <a href="#/events" class="loading nav-fish" >Events</a>
+            </li> | 
             <li ng-class="{active: $route.current.activeTab == 'contacts'}">
                 <a href="#/" class="nav-fish" >Kontakt</a>
-            </li> | 
-            <li ng-class="{active: $route.current.activeTab == 'events'}">
-                <a href="#/" class="loading nav-fish" >Events</a>
             </li>
           </ul>
         </nav>

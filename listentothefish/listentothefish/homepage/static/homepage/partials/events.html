@@ -1,28 +1,30 @@
 <div class="events">
 
     <div class="articles">
-        <article ng-repeat="event in events" ng-click="setActiveEvent(event)">
-            
-            <header>
-                <div>
-                    <time class="date" datetime="[[ event.date | date:'shortDate' ]]">  [[ event.date| date:'EEE dd.MM.yy' | date:'mediumDate']]
-                    </time>    
-                </div>
-                <div>
-                    <h1 class="title">[[ event.title ]]</h1>
-                </div>
-                
-            </header>
 
-            <div class="placetime">
-                <p>[[ event.place ]]</p>
-                <p>[[ event.date | date:'shortTime' ]]</p>
-            </div>
+        <a ng-repeat="event in events" ng-href="#/events/[[ event.id ]]">
+            <article>
+                <header>
+                    <div>
+                        <time class="date" datetime="[[ event.date | date:'shortDate' ]]">  [[ event.date| date:'EEE dd.MM.yy' | date:'mediumDate']]
+                        </time>    
+                    </div>
+                    <div>
+                        <h1 class="title">[[ event.title ]]</h1>
+                    </div>
+                    
+                </header>
 
-            <p>[[ event.description ]]</p>
-            <!--<button ng-click="event.showMore=!event.showMore">Mehr</button>
-            <p ng-animate ng-show="event.showMore">[[ event.description ]]</p>-->
-        </article>
+                <div class="placetime">
+                    <p>[[ event.place ]]</p>
+                    <p>[[ event.date | date:'shortTime' ]]</p>
+                </div>
+
+                <p>[[ event.description ]]</p>
+                <!--<button ng-click="event.showMore=!event.showMore">Mehr</button>
+                <p ng-animate ng-show="event.showMore">[[ event.description ]]</p>-->
+            </article>
+        </a>
     </div>
 
     <div class="detail">

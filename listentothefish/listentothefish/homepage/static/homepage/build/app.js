@@ -11,7 +11,22 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
     var apiUrl = baseUrl + 'api/1.0/';
     var partialUrl = baseUrl + 'static/homepage/partials/';
 
-    $routeProvider.when('/', {
+    $routeProvider.when('/events', {
+        controller: 'EventController',
+        templateUrl: partialUrl + 'events.html',
+        activeTab: 'events',
+        resolve: {
+            events: ['$http', '$q', function($http, $q) {
+                var deferred = $q.defer();
+                $http.get(apiUrl + 'events/?format=json').success(function(data) {
+                    deferred.resolve(data);
+                }).error(function() {
+                    deferred.reject();
+                });
+                return deferred.promise;
+            }]
+        }
+    }).when('/events/:id', {
         controller: 'EventController',
         templateUrl: partialUrl + 'events.html',
         activeTab: 'events',
@@ -30,7 +45,7 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
         templateUrl: partialUrl + 'about.html',
         activeTab: 'about'
     }).otherwise({
-        redirectTo: '/'
+        redirectTo: '/events'
     });
 
     // default values that we want
@@ -56,16 +71,13 @@ app.run(['$rootScope', '$route', function ($rootScope, $route) {
         $rootScope.isRouteLoading = false;
     });
 }]);
-var eventController = app.controller('EventController', ['$scope', 'events', function ($scope, events) {
+var eventController = app.controller('EventController', 
+    ['$scope', '$routeParams', 'events', function ($scope, $routeParams, events) {
+
     $scope.events = events;
 
-    if($scope.events.length > 0) {
-        $scope.activeEvent = $scope.events[0];
-    }
-
-    $scope.setActiveEvent = function (event) {
-        $scope.activeEvent = event;
-    };
+    var id = $routeParams.id || 0;
+    $scope.activeEvent = events[id];
     
 }]);
 })(window, jQuery, angular);

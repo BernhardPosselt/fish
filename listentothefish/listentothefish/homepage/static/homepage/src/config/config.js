@@ -9,7 +9,22 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
     var apiUrl = baseUrl + 'api/1.0/';
     var partialUrl = baseUrl + 'static/homepage/partials/';
 
-    $routeProvider.when('/', {
+    $routeProvider.when('/events', {
+        controller: 'EventController',
+        templateUrl: partialUrl + 'events.html',
+        activeTab: 'events',
+        resolve: {
+            events: ['$http', '$q', function($http, $q) {
+                var deferred = $q.defer();
+                $http.get(apiUrl + 'events/?format=json').success(function(data) {
+                    deferred.resolve(data);
+                }).error(function() {
+                    deferred.reject();
+                });
+                return deferred.promise;
+            }]
+        }
+    }).when('/events/:id', {
         controller: 'EventController',
         templateUrl: partialUrl + 'events.html',
         activeTab: 'events',
@@ -28,7 +43,7 @@ app.config(['$interpolateProvider', '$routeProvider', '$provide',
         templateUrl: partialUrl + 'about.html',
         activeTab: 'about'
     }).otherwise({
-        redirectTo: '/'
+        redirectTo: '/events'
     });
 
     // default values that we want

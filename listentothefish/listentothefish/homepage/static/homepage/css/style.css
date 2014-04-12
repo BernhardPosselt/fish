@@ -125,17 +125,28 @@ nav {
     padding: 10px;
 }
 
+.events a {
+    color: #000;
+    text-decoration: none;
+}
+
 .events .articles {
     width: 340px;
     float: left;
 }
 
-.events .articles article:nth-child(odd) {
+.events .articles a:nth-child(odd) {
     background-color: #e7e7e7;
 }
 
 .events article {
     cursor: pointer;
+}
+
+.events .active {
+    background-color: #fefefe;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .events .detail {
